@@ -55,7 +55,7 @@ public class PatientDaoImpl extends AbstractJpaDao<Patient> implements PatientDa
 	public Patient findByPatientID(String patientID){
 		
 		try{
-			return entityManager.createQuery("select p from Patient p where p.patientID LIKE :patientID", Patient.class)
+			return entityManager.createQuery("select p from Patient p where p.patientID = :patientID", Patient.class)
 			.setParameter("patientID", patientID)			
 			.getSingleResult();
 		}catch(Exception e){			

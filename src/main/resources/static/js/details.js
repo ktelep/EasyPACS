@@ -18,7 +18,7 @@ function initFancyBox()
 		closeBtn  : true,
 		arrows    : true,
 		nextClick : false,			
-		width: 520,
+		width: 900,
 		height: 900,
 		autoWidth: true,
 		autoHeight: true,

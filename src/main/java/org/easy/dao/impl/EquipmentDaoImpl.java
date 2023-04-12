@@ -53,7 +53,7 @@ public class EquipmentDaoImpl extends AbstractJpaDao<Equipment> implements Equip
 	public Equipment findByPkTBLSeriesID(Long pkTBLSeriesID){
 		
 		try{
-			return entityManager.createQuery("select e from Equipment e  where e.series.pkTBLSeriesID LIKE :pkTBLSeriesID", Equipment.class)
+			return entityManager.createQuery("select e from Equipment e  where e.series.pkTBLSeriesID = :pkTBLSeriesID", Equipment.class)
 			.setParameter("pkTBLSeriesID", pkTBLSeriesID)			
 			.getSingleResult();
 		}catch(Exception e){			
