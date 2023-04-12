@@ -14,10 +14,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.WebApplicationType;
+import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceBuilder;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -51,8 +53,8 @@ public class Application {
     public static void main(String[] args) {
               
         SpringApplication app = new SpringApplication(Application.class);
-        app.setShowBanner(false);
-        app.setWebEnvironment(true);
+        app.setBannerMode(Banner.Mode.OFF);
+        app.setWebApplicationType(WebApplicationType.SERVLET);
         app.run(args);
         
         LOG.info("Welcome to EasyPACS!");
